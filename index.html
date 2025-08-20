@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landscape Recipe Card</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Dark mode toggle -->
+  <button class="toggle-dark" onclick="toggleDark()">🌙</button>
+
+  <div class="card">
+    <img src="https://api.floraindia.com/upload/x8i2a54tpp1754035623750.webp" alt="Chocolate Cake">
+    
+    <div class="card-content">
+      <div>
+        <h2>Chocolate Cake</h2>
+        <p class="details">⏱ Prep Time: 45 mins | 🍴 Serves: 4</p>
+
+        <button class="btn" onclick="toggleContent('ingredients', this)">Show Ingredients</button>
+        <button class="btn" onclick="toggleContent('steps', this)">Show Steps</button>
+        <button class="btn" onclick="startCooking()">Start Cooking</button>
+        <button class="btn" id="nextStepBtn" style="display:none;" onclick="nextStep()">Next Step ➡️</button>
+
+        <!-- Ingredients Section -->
+        <div id="ingredients" class="content slide-left">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>1 cup flour</li>
+            <li>1/2 cup cocoa powder</li>
+            <li>1 cup sugar</li>
+            <li>2 eggs</li>
+            <li>1/2 cup butter</li>
+            <li>1 tsp baking powder</li>
+          </ul>
+        </div>
+
+        <!-- Steps Section -->
+        <div id="steps" class="content slide-right">
+          <h3>Steps:</h3>
+          <ol id="stepsList">
+            <li>Preheat oven to 180°C.</li>
+            <li>Mix dry ingredients together.</li>
+            <li>Add eggs and butter, whisk well.</li>
+            <li>Pour into a cake tin.</li>
+            <li>Bake for 30–35 mins.</li>
+            <li>Cool, decorate & serve.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-container" id="progressContainer">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
